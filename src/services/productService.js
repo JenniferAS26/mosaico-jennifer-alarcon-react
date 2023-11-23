@@ -1,10 +1,10 @@
 import axios from 'axios'
+import endpoints from './endpoints'
 
-const BASE_URL = 'https://products-service-7m2n.onrender.com'
 
 const fetchProducts = async () => {
   try {
-    const { data } = await axios.get(`${BASE_URL}/products`)
+    const { data } = await axios.get(endpoints.products)
     return data
   } catch (error) {
     console.warn(error)
@@ -13,7 +13,7 @@ const fetchProducts = async () => {
 
 const fetchProductsByParams = async ( params ) => {
   try {
-    const { data } = await axios.get(`${BASE_URL}/products`, { params: params })
+    const { data } = await axios.get(endpoints.products, { params: params })
     return data
   } catch (error) {
     console.warn(error)
