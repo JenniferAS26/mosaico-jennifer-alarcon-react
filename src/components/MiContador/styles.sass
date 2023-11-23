@@ -1,26 +1,27 @@
+@use '../../styles/_variables' as *
+@use '../../styles/_mixins' as *
+
 .counter-container
   width: 200px
-  height: 100px
+  height: 70px
   display: flex
   justify-content: space-between
   align-items: center
   gap: 20px
-  background-color: #F2C6C2
-  border-radius: 15px
+  background-color: $bg-color
+  border: 1px solid $bg-color-3
+  border-radius: 40px
   padding: 0 20px
   &__button
     cursor: pointer
     width: 50px
     height: 50px
-    border: none
-    color: #F28585
+    color: $primary-text-color  
     font-size: 1.8rem
     border-radius: 50%
-    background: #F2C6C2
-    box-shadow: inset 8px -8px 16px #e6bcb8,inset -8px 8px 16px #fed0cc
-    &:hover
-      box-shadow: -8px 8px 16px #e6bcb8, 8px -8px 16px #fed0cc
+    border: 1px solid $bg-color-3
+    background-color: $bg-color
   &__span
-    color: #F28585
+    color: $primary-text-color  
     font-size: 1.8rem
     font-weight: 600

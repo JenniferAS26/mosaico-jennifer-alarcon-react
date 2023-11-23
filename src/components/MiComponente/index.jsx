@@ -1,7 +1,8 @@
+import './styles.sass'
 
 const MiComponente = () => {
   return (
-    <h1>Hola, soy un componente funcional de React</h1>
+    <h2 className='micomponente-title'>Hola, soy un componente funcional de React</h2>
   )
 }
 

@@ -33,7 +33,7 @@ const MisProductos = ({ products }) => {
             onClick={() => handleCategoryClick('')}
           >
             <img className='thumbnail' src={other} alt='thumbnail picture' />
-            <span>all</span>
+            <span>All</span>
           </li>
           <li 
             className='item'
