@@ -11,4 +11,13 @@ const fetchProducts = async () => {
   }
 }
 
-export { fetchProducts }
+const fetchProductsByParams = async ( params ) => {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/products`, { params: params })
+    return data
+  } catch (error) {
+    console.warn(error)
+  }
+}
+
+export { fetchProducts, fetchProductsByParams }

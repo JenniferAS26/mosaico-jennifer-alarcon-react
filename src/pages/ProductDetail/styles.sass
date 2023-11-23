@@ -1,0 +1,87 @@
+@use '../../styles/_variables' as *
+@use '../../styles/_mixins' as *
+
+.product-detail
+  width: 100%
+  height: 100%
+  position: relative
+  @include flexCenter(column, flex-end, flex-start)
+  &__back
+    cursor: pointer
+    width: 60px
+    height: 60px
+    border: none
+    background-color: transparent
+    color: $secondary-text-color
+    font-size: 3rem
+    position: absolute
+    top: 10px
+    left: 0
+    z-index: 4
+  &__image
+    width: $mobile-width
+    height: 500px
+    border-radius: $border-radius-container
+    object-fit: cover
+    position: absolute
+    top: 0
+  &__description
+    width: 100%
+    height: 370px
+    padding: 20px
+    display: grid
+    align-items: center
+    gap: 10px
+    &--name
+      font-size: 3rem
+      line-height: 1
+      letter-spacing: 0.6px
+      color: $primary-text-color
+    &--rank-price, &--quantity
+      width: 100%
+      @include flexCenter(row, space-between, center)
+      .rank
+        width: 100%
+        @include flexCenter(row, flex-start, center)
+        gap: 10px
+        span
+          font-size: 1.8rem
+          display: grid
+          place-items: center
+        &__star
+          color: #F2C744
+        &__number
+          color: $primary-text-color
+      .price-wrapper
+        width: auto
+        @include flexCenter(row, center, center)
+        gap: 10px
+      .price
+        font-size: 2rem
+        font-weight: $semibold-weight
+        color: $primary-text-color
+        padding: 5px 10px
+        border-radius: 5px
+      .old
+        background-color: $bg-color-3
+        color: $tertiary-text-color
+        text-decoration: line-through
+        opacity: 0.6
+      .span-quantity
+        font-size: 1.4rem
+        color: $tertiary-text-color
+    &--text
+      font-size: 1.5rem
+      color: $tertiary-text-color
+    &--cart
+      justify-self: center
+      width: 200px
+      height: 40px
+      border: none
+      border-radius: 10px
+      background-color: $secondary-text-color
+      color: $bg-color
+      font-size: 1.6rem
+      font-weight: $bold-weight
+      @include flexCenter(row, center, center)
+      gap: 10px

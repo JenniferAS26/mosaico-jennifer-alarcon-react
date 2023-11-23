@@ -4,6 +4,7 @@ import Welcome from '../pages/Welcome'
 import Layout from '../components/Layout'
 import ReactBasicModule from '../pages/ReactBasicModule'
 import TodoList from '../pages/TodoList'
+import ProductDetail from '../pages/ProductDetail'
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
         <Route path='todo-list' element={<TodoList />} />
       </Route>
       <Route path='welcome' element={<Welcome />} />
+      <Route path='product-detail/:id' element={<ProductDetail />} />
     </Routes>
   )
 }

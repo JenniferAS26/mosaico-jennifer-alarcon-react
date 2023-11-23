@@ -1,0 +1,25 @@
+@use '../../styles/_variables' as *
+@use '../../styles/_mixins' as *
+
+.counter-reducer
+  width: 100px
+  height: 40px
+  @include flexCenter(row, space-between, center)
+  padding: 5px 5px
+  border: 1px solid $bg-color-3
+  border-radius: 20px
+  &__button
+    width: 30px
+    height: 30px
+    font-size: 1.4rem
+    color: $primary-text-color
+    border: 1px solid $bg-color-3
+    border-radius: 50%
+    background-color: transparent
+    cursor: pointer
+    display: grid
+    place-items: center
+  &__span
+    font-size: 1.6rem
+    font-weight: $semibold-weight
+    color: $primary-text-color
