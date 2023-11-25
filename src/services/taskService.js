@@ -19,6 +19,14 @@ const fetchTaskByParams = async ( params ) => {
   }
 }
 
+const createTask = async ( body ) => {
+  try {
+    await axios.post(endpoints.tasks, body)
+  } catch (error) {
+    console.warn(error)
+  }
+}
+
 const updateTask = async ( id, body ) => {
   try {
     await axios.patch(`${endpoints.tasks}/${id}`, body)
@@ -29,10 +37,10 @@ const updateTask = async ( id, body ) => {
 
 const deleteTask = async ( id ) => {
   try {
-    await axios.delete(endpoints.tasks, id)
+    await axios.delete(`${endpoints.tasks}/${id}`)
   } catch (error) {
     console.warn(error)
   }
 }
 
-export { fetchTasks, fetchTaskByParams, updateTask, deleteTask }
+export { fetchTasks, fetchTaskByParams, createTask, updateTask, deleteTask }
