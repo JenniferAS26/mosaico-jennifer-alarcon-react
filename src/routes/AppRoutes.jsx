@@ -7,6 +7,7 @@ import TodoList from '../pages/TodoList'
 import ProductDetail from '../pages/ProductDetail'
 import SignIn from '../auth/pages/SignIn'
 import SignUp from '../auth/pages/SignUp'
+import PrivateRoutes from './PrivateRoutes'
 
 const AppRoutes = () => {
   return (
@@ -14,7 +15,11 @@ const AppRoutes = () => {
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='basic-module' element={<ReactBasicModule />} />
-        <Route path='todo-list' element={<TodoList />} />
+          <Route path='todo-list' element={
+            <PrivateRoutes>
+              <TodoList />
+            </PrivateRoutes>
+          } />
       </Route>
       <Route path='welcome' element={<Welcome />} />
       <Route path='product-detail/:id' element={<ProductDetail />} />
