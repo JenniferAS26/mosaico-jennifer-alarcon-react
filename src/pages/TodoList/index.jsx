@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, useFormState } from 'react-hook-form'
 import { FaRegCircle, FaRegCheckCircle, FaEdit, FaPlus } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 import { createTask, deleteTask, fetchTasks, updateTask } from '../../services/taskService'
@@ -85,6 +85,11 @@ const TodoList = () => {
     reset()
   }
 
+  const toggleTaskStatus = async ( status ) => {
+    await updateTask(selectTaskId, { done: !status })
+    getTaskFromAPI()
+  }
+
   const getTaskFromAPI = useCallback(() => {
     fetchTasks()
       .then(response => setTasks(response))
@@ -100,7 +105,13 @@ const TodoList = () => {
         tasks.map((task) => (
           <article key={task.id} className='todo-list__card'>
             <div className='todo-list__card--top'>
-              <span className='indicator'>
+              <span 
+                className='indicator'
+                onClick={() => {
+                  setSelectTaskId(task.id)
+                  toggleTaskStatus(task.done)
+                }}
+              >
                 {
                   task.done ? <FaRegCheckCircle /> : <FaRegCircle />
                 }
