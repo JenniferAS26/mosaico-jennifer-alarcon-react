@@ -5,6 +5,8 @@ import Layout from '../components/Layout'
 import ReactBasicModule from '../pages/ReactBasicModule'
 import TodoList from '../pages/TodoList'
 import ProductDetail from '../pages/ProductDetail'
+import SignIn from '../auth/pages/SignIn'
+import SignUp from '../auth/pages/SignUp'
 
 const AppRoutes = () => {
   return (
@@ -16,6 +18,8 @@ const AppRoutes = () => {
       </Route>
       <Route path='welcome' element={<Welcome />} />
       <Route path='product-detail/:id' element={<ProductDetail />} />
+      <Route path='sign-in' element={<SignIn />} />
+      <Route path='sign-up' element={<SignUp />} />
     </Routes>
   )
 }

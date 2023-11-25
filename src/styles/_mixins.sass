@@ -1,6 +1,52 @@
+@use './_variables' as *
+  
 @mixin flexCenter($direction, $justify, $align)
   display: flex
   flex-direction: $direction
   justify-content: $justify
   align-items: $align
 
+@mixin titleStyle($align, $position, $left, $top, $z-i, $color, $f-s, $letter-sp)
+  text-align: $align
+  position: $position
+  left: $left
+  top: $top
+  z-index: $z-i
+  color: $color
+  font-size: $f-s
+  letter-spacing: $letter-sp
+
+@mixin buttonStyle($width, $height, $b-r, $bg-color, $color, $f-s) 
+  cursor: pointer
+  width: $width
+  height: $height
+  border: none
+  border-radius: $b-r
+  background-color: $bg-color
+  color: $color
+  font-size: $f-s
+
+
+@mixin inputStyle($width, $height, $color, $f-s, $letter-sp, $ph-color, $focus-color, $focus-th) 
+  width: $width
+  height: $height
+  border: 1px solid $color
+  padding: 15px 20px
+  color: $color
+  font-size: $f-s
+  font-weight: $semibold-weight
+  letter-spacing: $letter-sp
+  &::placeholder 
+    color: $ph-color
+    font-size: $f-s
+    letter-spacing: $letter-sp
+    font-weight: $medium-weight
+  &:focus 
+    outline: $focus-th solid $focus-color
+  
+
+
+@mixin removeScrollBar 
+  &::-webkit-scrollbar 
+    display: none
+  
