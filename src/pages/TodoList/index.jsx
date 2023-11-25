@@ -234,10 +234,12 @@ const TodoList = () => {
           type='text' 
           placeholder='Edit task'
           onChange={(event) => setInputValue(event.target.value)}
+          className='edit-task__input'
         />
         <button 
           type='button'
           onClick={handleEditTask}
+          className='edit-task__button'
         >
           Edit
         </button>
