@@ -38,7 +38,7 @@ const Navbar = () => {
       <Link 
         className={`navbar__option ${activeClass === 3 ? 'active' : ''}`}
         onClick={() => handleLinkClick(3)}
-        to=''
+        to='/edit-account'
       >
         <FaUser />
       </Link>

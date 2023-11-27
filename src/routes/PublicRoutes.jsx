@@ -1,6 +1,6 @@
 import { Outlet, Navigate } from 'react-router-dom';
 
-const PublicRoute = ({ isAuth, redirectPath, children }) => {
+const PublicRoutes = ({ isAuth, redirectPath, children }) => {
 
   if (isAuth) return <Navigate to={redirectPath} />
 
@@ -11,4 +11,4 @@ const PublicRoute = ({ isAuth, redirectPath, children }) => {
   )
 }
 
-export default PublicRoute
+export default PublicRoutes
