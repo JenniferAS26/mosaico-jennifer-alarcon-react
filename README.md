@@ -105,3 +105,65 @@ server.listen(port, () => {
 
 
 ## MÓDULO SOBRE GESTION DE ESTADOS Y DATOS CON REACT CONTEXT Y USEREDUCER
+
+1. ¿Qué es React Context y para qué se utiliza en el desarrollo web con React?
+- React Contest es una característica de React que permite pasar datos a través del árbol de componentes sin usar props de forma manual.
+
+2. Describir cómo se crea un contexto en React y cómo se proporciona y consume
+información a través de él.
+- Crear el contexto usando el método 'useContext'.
+```
+export const UserContext = React.createContext();
+```
+
+- Usar el contexto creado, envolviendo otro componente en el arbol e inicializar el Provider usando el prop 'value'
+```
+export default function App() {
+  return (
+    <UserContext.Provider value="Reed">
+      <User />
+    </UserContext.Provider>
+  )
+}
+```
+
+- Leer el valor usando el Context consumer
+```
+function User() {
+  return (
+    <UserContext.Consumer>
+      {value => <h1>{value}</h1>} 
+      {/* prints: Reed */}
+    </UserContext.Consumer>
+  )
+}
+```
+
+
+3. ¿Cuál es la ventaja de utilizar React Context en lugar de pasar props a través de múltiples componentes?
+- El uso de props puede llegar a usar muchas lineas de código si es necesario pasar información a través de varios componentes. Usar React Context permite  que un domponente padre tenga cierta información disponible para cualquiera de sus componentes hijos, sin tener la necesidad de pasar props de forma explícita.
+
+4. Explicar el propósito de useReducer en React y cómo se diferencia de useState.
+- Tanto useReducer como useState se usan para el manejo del estado en un componente funcional. El useReducer permite añadir una función (Reducer) a un componente, que  especifica como actualizar su estado, basándose en una acción. Por otro lado, el useState permite agregar una variable que almacena el estado de un componente y retorna un arreglo con el estado actual y una función para actualizarlo.
+
+5. Describe los argumentos que toma la función useReducer.
+- reducer: La función reducer que especifica como actualizar el valor del estado.
+- initialArg: Corresponde al valor inicial desde el que se calcula el estado inicial.
+- init (Opcional): Función que retorna el estado inicial. Si no se especifica, el valor inicial es el de 'initialArg', en caso contrario, el estado inicial será el resultado de llamar a init(initialArg).
+
+6. ¿Por qué es útil utilizar useReducer para gestionar el estado en aplicaciones más complejas?
+- Los cambios en el estado son predecibles, dado que el estado cambiará de acuerdo a la función 'reducer'.
+- Los cambios en el estado implementados con useReducer son más mantenibles a lo largo del tiempo y además es relativamente fácil hacer seguimiento a los cambios en el estado de un componente.
+- Evita 'prop drilling': En aplicaciones de gran escala, pasar estados y funciones a través de varios niveles es dificil de mantener. useReducer permite centralizar la gestión del estado y proporcionar el acceso al mismo a aquellos componentes que lo requieran.
+
+7. ¿Cómo se puede utilizar React Context junto con useReducer para gestionar el estado global en una aplicación de React?
+- 
+
+8. ¿Por qué es importante tener un sistema de gestión de estado global en aplicaciones React más grandes?
+- 
+
+9. Menciona al menos tres ventajas de utilizar una combinación de React Context y useReducer en comparación con el manejo de estado local en componentes.
+- 
+
+10.¿En qué situaciones podría ser beneficioso migrar de un enfoque de manejo de estado local a un enfoque de estado global utilizando React Context y useReducer?
+- 
